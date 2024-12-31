@@ -1,0 +1,175 @@
+@property --ptop {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+@property --pright {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+@property --pbottom {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+@property --pleft {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+
+.box {
+    position: absolute;
+    transform: translate(-12px, -10px);
+    cursor: pointer;
+    z-index: -1;
+}
+.circle {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid white;
+    animation: 1s linear infinite alternate boxMagic,
+                4s linear infinite spinning;
+    position: fixed;
+    top: -15px;
+    left: -15px;
+
+    padding-top: var(--ptop);
+    padding-right: var(--pright);
+    padding-bottom: var(--pbottom);
+    padding-left: var(--pleft);
+}
+
+
+@keyframes boxMagic {
+    from {
+        box-shadow: 
+        0 0 0 1px rgb(7, 57, 240),
+        0 0 0 10px rgb(136, 0, 255),
+        0 0 0 5px rgb(255, 4, 230)
+        ;
+        --ptop: -70px;
+        --pright: 20px;
+        --pbottom: 70px;
+        --pleft: 20px;
+    }
+    to {
+        box-shadow: 
+        0 -10px 15px 0   rgb(7, 166, 240),
+        -10px 0 10px 0px  rgb(0, 3, 179),
+        0 10px 20px 0px  rgb(4, 42, 255)
+        ;
+        --ptop: 0px;
+        --pright: 70px;
+        --pbottom: 0px;
+        --pleft: -70px;
+    }
+}
+
+
+.circle1 {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid white;
+    animation: 1s linear infinite alternate boxMagic,
+                4s linear infinite spinning;
+    position: fixed;
+    top: -15px;
+    left: -15px;
+
+    padding-top: var(--ptop);
+    padding-right: var(--pright);
+    padding-bottom: var(--pbottom);
+    padding-left: var(--pleft);
+}
+.circle2 {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid white;
+    animation: 1s linear infinite alternate boxMagic,
+                4s linear infinite spinning;
+    position: fixed;
+    top: -15px;
+    left: -15px;
+
+    padding-top: var(--ptop);
+    padding-right: var(--pright);
+    padding-bottom: var(--pbottom);
+    padding-left: var(--pleft);
+}
+
+@property --ptop3 {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+@property --pright3 {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+@property --pbottom3 {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+@property --pleft3 {
+    syntax: "<length>";
+    initial-value: 40px;
+    inherits: true;
+}
+.circle3 {
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    border: 1px solid white;
+    animation: 1s linear infinite alternate boxMagic3,
+                4s linear infinite spinning;
+    position: fixed;
+    top: -15px;
+    left: -15px;
+
+    padding-top: var(--ptop3);
+    padding-right: var(--pright3);
+    padding-bottom: var(--pbottom3);
+    padding-left: var(--pleft3);
+}
+@keyframes boxMagic3 {
+    from {
+        box-shadow: 
+        0 0 0 1px rgb(7, 57, 240),
+        0 0 0 10px rgb(136, 0, 255),
+        0 0 0 5px rgb(255, 4, 230)
+        ;
+        --ptop3: 100px;
+        --pright3: -60px;
+        --pbottom3: -90px;
+        --pleft3: -200px;
+    }
+    to {
+        box-shadow: 
+        0 -10px 15px 0   rgb(7, 166, 240),
+        -10px 0 10px 0px  rgb(0, 3, 179),
+        0 10px 20px 0px  rgb(4, 42, 255)
+        ;
+        --ptop3: 0px;
+        --pright3: -30px;
+        --pbottom3: -50px;
+        --pleft3: 70px;
+    }
+}
+
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+

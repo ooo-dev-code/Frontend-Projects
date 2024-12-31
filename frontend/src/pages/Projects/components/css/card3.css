@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Emblema+One&family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Gugi&family=Hanalei+Fill&family=Kumar+One&family=Warnes&display=swap');
+
+@property --angle1 {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: true;
+}
+
+@property --text_shadow {
+    syntax: "*";
+    initial-value: rgb(47, 255, 64);
+    inherits: true;
+}
+
+.item2{
+    transform: rotateY(216deg) translateZ(550px) scale(var(--card_size3)); 
+    filter:  grayscale(var(--card_active3))  hue-rotate(20deg);
+    transition: 1s all ease-out;
+    animation: 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1 entry1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+
+    border-radius: 5%;
+    background: linear-gradient(90deg, #404040, #424a41, #5c8736, #71a706, #73a911, #99c47c, #f0f7ef, #ffffff);;
+    text-align: center;
+    font-size: 0.6rem;
+
+    &::after {
+        content: "";
+        width: 80%;
+        height: 80%;
+        top: 7%;
+        left: 6%;
+        background: conic-gradient(from 360deg at 50% 120%, #0a5400, #095000, #083b00, #073000, #073000, #093700, #072a00, #082b00);
+        padding: 10px;
+        z-index: -5;
+        position:absolute;
+    }
+    &::before {
+        content: "";
+        width: 80%;
+        height: 80%;
+        top: 5%;
+        left: 3.5%;
+        background-image: conic-gradient(from var(--angle1), rgb(4, 255, 0), rgb(0, 83, 7), rgb(4, 255, 0));
+        animation: 2s linear infinite aura_spin1;
+        box-shadow: 0px 0 20px 3px rgb(0, 55, 0);
+        padding: 15px;
+        z-index: -5;
+        position:absolute;
+    }
+    
+    
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 0;
+        font-family: "Black Ops One", serif;
+        font-weight: 400;
+        font-style: normal; 
+        color: white;
+        -webkit-box-reflect: below -18px linear-gradient(transparent, green);
+        text-shadow: 0 0 10px  rgb(71, 255, 47),
+                     0 0 20px rgb(71, 255, 47),
+                     0 0 40px rgb(71, 255, 47),
+                     0 0 80px rgb(71, 255, 47),
+                     0 0 160px rgb(71, 255, 47);
+    }
+
+    p {
+        position: absolute;
+        width: 85%;
+        color: white;
+        left: 8%;
+        span {
+            text-shadow: 0 0 1px var(--text_shadow),
+                     0 0 2px rgb(71, 255, 47),
+                     0 0 4px rgb(71, 255, 47),
+                     0 0 8px var(--text_shadow),
+                     0 0 1px var(--text_shadow);
+        }
+        ul {
+            position: absolute;
+            left: -15%;
+            font-size: 0.7rem;
+            li {
+                list-style: none;
+                margin-bottom: 12px;
+                background: linear-gradient(360deg, #bcffae 0%, #88ff73 40%, #0fff00 100%);
+                color: transparent;
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-fill-color: transparent;
+                text-shadow: 0 0 1px var(--text_shadow),
+                     0 0 0.25px rgb(255, 255, 255),
+                     0 0 0.5px rgb(255, 255, 255),
+                     0 0 1px var(--text_shadow),
+                     0 0 0.125px var(--text_shadow);
+            }
+        }
+    }
+    
+    button {
+        position: absolute;
+        top: 77%;
+        height: 40px;
+        left: 25%;
+
+        align-items: center;
+        background-color: initial;
+        background-image: linear-gradient(rgba(132, 201, 142, 0.84), rgba(31, 91, 44, 0.84) 50%);
+        border-radius: 42px;
+        border-width: 0;
+        box-shadow: rgba(59, 255, 75, 0.24) 0 2px 2px,rgba(35, 255, 119, 0.4) 0 8px 12px, inset rgba(153, 255, 161, 0.24) 0 2px 2px;
+        color: #FFFFFF;
+        cursor: pointer;
+        display: flex;
+        font-family: Quicksand,sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        justify-content: center;
+        letter-spacing: .04em;
+        line-height: 16px;
+        margin: 0;
+        padding: 18px 18px;
+        text-align: center;
+        text-decoration: none;
+        text-shadow: rgba(255, 255, 255, 0.4) 0 0 4px,rgba(255, 255, 255, 0.2) 0 0 12px,rgba(57, 31, 91, 0.6) 1px 1px 4px,rgba(57, 31, 91, 0.32) 4px 4px 16px;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        vertical-align: baseline;
+
+        &:hover {
+        background-image: linear-gradient(rgba(132, 201, 142,1), rgba(31, 91, 44, 1) 50%)
+        }
+
+        @media (min-width: 768px) {
+        & {
+            font-size: 21px;
+            padding: 18px 34px;
+        }
+        }
+    }
+}
+
+@keyframes aura_spin1 {
+    from {
+        --angle1: 0deg;
+    }
+    to {
+        --angle1: 360deg;
+    }
+}

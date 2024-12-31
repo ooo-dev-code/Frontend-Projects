@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Emblema+One&family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Gugi&family=Hanalei+Fill&family=Kumar+One&family=Warnes&display=swap');
+
+:root {
+    --test: red;
+
+    --deg_multiplicator: 0;
+    --card_color: transparent;
+    --card_bg: rgb(23, 141, 0);
+    --card_bg_shadow: inset 0px 0px 20px 20px var(--card_bg), inset 0px 0px 20px 20px blue;
+
+    --card_active1: 0;
+    --card_size1:   1;
+    --card_active2: 1;
+    --card_size2: 0.3;
+    --card_active3: 1;
+    --card_size3: 0.3;
+    --card_active4: 1;
+    --card_size4: 0.3;
+    --card_active5: 1;
+    --card_size5: 0.3;
+
+    --color: white;
+    --bg: black;
+    --bg_light: white;
+    --bg_after_light: black;
+    --left: 75%;
+    --sun_i: radial-gradient(circle at 75% 30%, white 5px, rgb(249 255 138) 8%, rgb(255 183 57) 60%, rgb(221, 255, 0) 100%);
+}
+
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    transition: 1s all ease;
+    background-image: url("../assets/drmakete-lab-hsg538WrP0Y-unsplash.jpg");
+    background-position: 30% 70%;
+    background-repeat: no-repeat;
+    animation: 1s linear 1 fade;
+    box-shadow: var(--card_bg_shadow);
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    position: relative;
+    transition: 1s all ease;
+    animation: 1s linear 1 start_card;
+}
+
+.banner .slider {
+    position: absolute;
+    width: 200px;
+    height: 250px;
+    top: 30%;
+    left: 43%;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(calc(72*var(--deg_multiplicator)*1deg));
+    transition: 1s all ease;
+    border-radius: 50%;
+    position: relative;
+
+    background: var(--sun_i);
+}
+
+.banner .slider  .item2 .item3 .item4 {
+    position: absolute;
+    inset: 0 0 0 0;
+    transform: translateZ(550px);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Emblema+One&family=Encode+Sans+Condensed:wght@100;200;300;400;500;600;700;800;900&family=Faustina:ital,wght@0,300..800;1,300..800&family=Gugi&family=Hanalei+Fill&family=Kumar+One&family=Warnes&display=swap');
+
+.move_left {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: fixed;
+    top: 35%;
+    left: 5%;
+    z-index: 222;
+    animation: 1s linear 1 fade;
+    font-family: "Emblema One", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 4rem;
+    box-shadow: 0 0 10px 10px black;
+    &::after {
+        content: "";
+        width: 30px;
+        height: 200px;
+        position: absolute;
+        left: 20px;
+        top: 130px;
+        transform: rotateZ(-45deg);
+        border-radius: 20%;
+        background-color: white;
+        box-shadow: 0 0 10px 10px black, inset 0 0 10px 10px rgb(166, 166, 166);
+    }
+    &::before {
+        content: "";
+        width: 30px;
+        height: 200px;
+        position: absolute;
+        left: 20px;
+        top: -130px;
+        transform: rotateZ(45deg);
+        border-radius: 20%;
+        background-color: white;
+        box-shadow: 0 0 10px 10px black, inset 0 0 10px 10px rgb(166, 166, 166);
+    }
+}
+.lightDark2 {
+    width: 300px;
+    height: 100px;
+    border-radius: 0px 50px 50px 0px;
+    position: fixed;
+    left: 78%;
+    top: 40%;
+    z-index: 222;
+    animation: 2s linear 1 fade;
+    transition: 1s all ease-out;
+    border-radius: 10%;
+    background: var(--bg_light);
+    margin-left: 25px;
+    position: relative;
+    &::after {
+        content: "";
+        transition: 1s all ease-out;
+        position: absolute;
+        width: 70px;
+        height: 70px;
+        top: 20%;
+        left: var(--left);
+        border-radius: 50%;
+        background-color: var(--bg_after_light);
+    }
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
