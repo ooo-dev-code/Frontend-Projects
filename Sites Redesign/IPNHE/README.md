@@ -1,4 +1,4 @@
 # LPNHE clone website
 
-SQLite, Django, React
+# SQLite, Django, React
  
